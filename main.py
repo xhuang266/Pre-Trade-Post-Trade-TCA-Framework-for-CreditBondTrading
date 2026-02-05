@@ -9,7 +9,6 @@ from src.visualization import generate_visual_report, run_reality_check
 # ==============================================================================
 
 # 1. Load Data
-# Note: Ensure the path points to your actual CSV file
 file_path = "data/rfq_data.csv"
 print(f"Initializing Data Adapter with file: {file_path}")
 df = TradeDataAdapter.process(file_path)
@@ -56,4 +55,5 @@ if df is not None:
     generate_visual_report(tca_system, df)
 
     # 6. Run Reality Check (Stress Test)
+
     run_reality_check(tca_system, df)
