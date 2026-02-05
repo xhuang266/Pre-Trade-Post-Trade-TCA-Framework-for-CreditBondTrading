@@ -11,7 +11,7 @@ It features a **Full-Stack Dashboard (React + Flask)** to visualize cost attribu
 
 ---
 
-## 📊 Dashboard Preview
+## Dashboard Preview
 
 <p align="center">
   <img src="demo1.png" alt="TCA Dashboard Main View" width="100%">
@@ -67,4 +67,5 @@ Credit-Bond-TCA-System/
 │   ├── public/
 │   └── package.json
 │
+
 └── README.md                # Project Documentation
