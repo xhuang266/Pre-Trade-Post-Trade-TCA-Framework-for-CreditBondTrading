@@ -1,4 +1,4 @@
-# Quantitative Pre-Trade TCA Framework for Credit Trading
+# Quantitative TCA Framework for Credit Trading
 
 ## Overview
 
@@ -27,7 +27,7 @@ By leveraging **Ridge Regression** for cost estimation and **Isotonic Calibrated
 ```text
 Credit-Bond-TCA-System/
 ├── data/
-│   └── rfq_data.csv           # Input Data (Not included in repo)
+│   └── rfq_data.csv           # Input Data
 ├── src/
 │   ├── __init__.py
 │   ├── data_adapter.py        # Data Cleaning, VIX Fetching, Feature Engineering
@@ -35,4 +35,5 @@ Credit-Bond-TCA-System/
 │   ├── feedback.py            # Post-Trade Analysis & Parameter Recalibration
 │   └── visualization.py       # Visual Reporting & Reality Check Utilities
 ├── main.py                    # Main Execution Script
+
 └── README.md                  # Project Documentation
