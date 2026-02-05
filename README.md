@@ -32,7 +32,7 @@ It features a **Full-Stack Dashboard (React + Flask)** to visualize cost attribu
 * **VIX Integration:** Enriches trade data with macro volatility signals derived from market data.
 
 ### 2. Two-Stage Predictive Engine (Module 2)
-* **Cost Model (Ridge Regression):** Uses L2 regularization to handle high multicollinearity among financial features
+* **Cost Model:** Handle high multicollinearity among financial features
 * **Probability Model (Calibrated Classifier):** Uses **Isotonic Regression** to map raw logistic scores to actual statistical fill rates
 * **Market Impact Modeling:** Implements the Square-Root Law with an asymmetric "Crowding Penalty" to simulate liquidity evaporation during panic selling or crowded trades
 
@@ -66,4 +66,5 @@ Credit-Bond-TCA-System/
 │
 
 └── README.md                # Project Documentation
+
 
