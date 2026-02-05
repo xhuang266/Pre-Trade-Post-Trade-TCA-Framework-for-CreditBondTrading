@@ -9,14 +9,14 @@ By leveraging **Ridge Regression** for cost estimation and **Isotonic Calibrated
 ## Key Features
 
 ### 1. Data Engineering & Validation (Module 1)
-* **Strict Walk-Forward Validation:** Eliminates look-ahead bias by ensuring feature scaling (StandardScaler) and model training only use data available up to time $T$.
+* **Strict Walk-Forward Validation:** Eliminates look-ahead bias
 * **Issuer-Level Aggregation:** Solves the sparse data problem in credit markets by aggregating liquidity metrics across an issuer's entire bond curve when specific bond data is missing.
-* **VIX Integration:** Enriches trade data with macro volatility signals derived from Yahoo Finance.
+* **VIX Integration:** Enriches trade data with macro volatility signals derived from Yahoo Finance data.
 
 ### 2. Two-Stage Predictive Engine (Module 2)
 * **Cost Model (Ridge Regression):** Uses L2 regularization to handle high multicollinearity among financial features (Spread, Duration, VIX, DTS).
-* **Probability Model (Calibrated Classifier):** Uses **Isotonic Regression** to map raw logistic scores to actual statistical fill rates (e.g., a 0.7 score implies a true 70% probability of execution).
-* **Market Impact Modeling:** Implements the **Square-Root Law** with an asymmetric "Crowding Penalty" to simulate liquidity evaporation during panic selling or crowded trades.
+* **Probability Model (Calibrated Classifier):** Uses **Isotonic Regression** to map raw logistic scores to actual statistical fill rates.
+* **Market Impact Modeling:** Implements with an asymmetric "Crowding Penalty" to simulate liquidity evaporation during panic selling or crowded trades.
 
 ### 3. Decision Logic & Feedback Loop (Module 3)
 * **Value Trap Filter:** Calculates `Net Edge = Alpha - Predicted Cost`. Trades are rejected ("NO_TRADE") if transaction costs erode the theoretical alpha, preventing unprofitable execution.
@@ -37,3 +37,4 @@ Credit-Bond-TCA-System/
 ├── main.py                    # Main Execution Script
 
 └── README.md                  # Project Documentation
+
