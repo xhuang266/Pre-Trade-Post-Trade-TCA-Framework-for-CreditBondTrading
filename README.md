@@ -4,9 +4,6 @@
 ## Overview
 
 This project implements an institutional-grade **Pre-Trade Transaction Cost Analysis (TCA)** system designed for the Credit Bond market. It transitions execution strategy from empirical intuition to a **probability-calibrated framework**.
-
-By leveraging **Ridge Regression** for cost estimation and **Isotonic Calibrated Logistic Regression** for execution probability, the system quantifies the risk of "blind flying" in OTC markets. 
-
 It features a **Full-Stack Dashboard (React + Flask)** to visualize cost attribution, slippage analysis, and outlier detection in real-time.
 
 ---
@@ -31,13 +28,13 @@ It features a **Full-Stack Dashboard (React + Flask)** to visualize cost attribu
 
 ### 1. Data Engineering & Validation (Module 1)
 * **Strict Walk-Forward Validation:** Eliminates look-ahead bias
-* **Issuer-Level Aggregation:** Solves the sparse data problem in credit markets by aggregating liquidity metrics across an issuer's entire bond curve when specific bond data is missing.
-* **VIX Integration:** Enriches trade data with macro volatility signals derived from Yahoo Finance data.
+* **Issuer-Level Aggregation:** Solves the sparse data problem in credit markets by aggregating liquidity metrics across an issuer's entire bond curve when specific bond data is missing
+* **VIX Integration:** Enriches trade data with macro volatility signals derived from market data.
 
 ### 2. Two-Stage Predictive Engine (Module 2)
-* **Cost Model (Ridge Regression):** Uses L2 regularization to handle high multicollinearity among financial features (Spread, Duration, VIX, DTS).
-* **Probability Model (Calibrated Classifier):** Uses **Isotonic Regression** to map raw logistic scores to actual statistical fill rates (e.g., a 0.7 score implies a true 70% probability of execution).
-* **Market Impact Modeling:** Implements the Square-Root Law with an asymmetric "Crowding Penalty" to simulate liquidity evaporation during panic selling or crowded trades.
+* **Cost Model (Ridge Regression):** Uses L2 regularization to handle high multicollinearity among financial features
+* **Probability Model (Calibrated Classifier):** Uses **Isotonic Regression** to map raw logistic scores to actual statistical fill rates
+* **Market Impact Modeling:** Implements the Square-Root Law with an asymmetric "Crowding Penalty" to simulate liquidity evaporation during panic selling or crowded trades
 
 ### 3. Decision Logic & Feedback Loop (Module 3)
 * **Value Trap Filter:** Calculates `Net Edge = Alpha - Predicted Cost`. Trades are rejected ("NO_TRADE") if transaction costs erode the theoretical alpha, preventing unprofitable execution.
@@ -69,3 +66,4 @@ Credit-Bond-TCA-System/
 │
 
 └── README.md                # Project Documentation
+
